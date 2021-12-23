@@ -13,6 +13,5 @@ jobs:
         uses: cycjimmy/semantic-release-action@v2
         with:
           semantic_version: 18.0.1
-          branches: ['main']
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
