@@ -10,27 +10,27 @@ jobs:
       steps:
         - name: Checkout the code
           uses: actions/checkout@v2
-        - name: Deploy af96a99fa-frontend-react-with
+        - name: Deploy a9908cb38-frontend-react-with
           uses: akhileshns/heroku-deploy@v3.12.12
           with:
             heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-            heroku_app_name: 'af96a99fa-frontend-react-with'
+            heroku_app_name: a9908cb38-frontend-react-with
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
             usedocker: true
             appdir: frontend_react_with_rest
             docker_build_args: |
               BACKEND_API_URL
           env:
-            BACKEND_API_URL: https://a3db02b64-rest-python.herokuapp.com
-        - name: Deploy a3db02b64-rest-python
+            BACKEND_API_URL: https://adf3688c6-rest-python.herokuapp.com
+        - name: Deploy adf3688c6-rest-python
           uses: akhileshns/heroku-deploy@v3.12.12
           with:
             heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-            heroku_app_name: 'a3db02b64-rest-python'
+            heroku_app_name: adf3688c6-rest-python
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
             usedocker: true
             appdir: rest_python
             docker_build_args: |
               BACKEND_API_URL
           env:
-            BACKEND_API_URL: https://a3db02b64-rest-python.herokuapp.com
+            BACKEND_API_URL: https://adf3688c6-rest-python.herokuapp.com
