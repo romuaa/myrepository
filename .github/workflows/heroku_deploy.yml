@@ -12,15 +12,17 @@ jobs:
       steps:
         - name: Checkout the code
           uses: actions/checkout@v2
-        - name: Deploy a40ea4a4d-frontend-react-with
+        - name: Deploy af96a99fa-frontend-react-with
           uses: akhileshns/heroku-deploy@v3.12.12
           with:
             heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-            heroku_app_name: 'a40ea4a4d-frontend-react-with'
+            heroku_app_name: 'af96a99fa-frontend-react-with'
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
-        - name: Deploy a9425b721-rest-python
+            usedocker: true
+        - name: Deploy a3db02b64-rest-python
           uses: akhileshns/heroku-deploy@v3.12.12
           with:
             heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-            heroku_app_name: 'a9425b721-rest-python'
+            heroku_app_name: 'a3db02b64-rest-python'
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
+            usedocker: true
