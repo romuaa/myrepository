@@ -7,8 +7,6 @@ jobs:
     herokudeploy:
       name: Deploy to Heroku
       runs-on: ubuntu-latest
-      env:
-        BACKEND_API_URL: ${{ secrets.BACKEND_API_URL }}
       steps:
         - name: Checkout the code
           uses: actions/checkout@v2
@@ -20,6 +18,10 @@ jobs:
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
             usedocker: true
             appdir: frontend_react_with_rest
+            docker_build_args: |
+              BACKEND_API_URL
+          env:
+            BACKEND_API_URL: https://a3db02b64-rest-python.herokuapp.com
         - name: Deploy a3db02b64-rest-python
           uses: akhileshns/heroku-deploy@v3.12.12
           with:
@@ -28,3 +30,7 @@ jobs:
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
             usedocker: true
             appdir: rest_python
+            docker_build_args: |
+              BACKEND_API_URL
+          env:
+            BACKEND_API_URL: https://a3db02b64-rest-python.herokuapp.com
