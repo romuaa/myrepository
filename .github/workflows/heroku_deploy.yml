@@ -19,6 +19,7 @@ jobs:
             heroku_app_name: 'af96a99fa-frontend-react-with'
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
             usedocker: true
+            appdir: frontend_react_with_rest
         - name: Deploy a3db02b64-rest-python
           uses: akhileshns/heroku-deploy@v3.12.12
           with:
@@ -26,3 +27,4 @@ jobs:
             heroku_app_name: 'a3db02b64-rest-python'
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
             usedocker: true
+            appdir: rest_python
