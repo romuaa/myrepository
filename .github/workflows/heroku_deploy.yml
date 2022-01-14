@@ -1,22 +1,26 @@
-name: 'heroku-deployment'
+name: Heroku Deployment
 on:
   push:
     branches:
       - main
 jobs:
-    build:
-    runs-on: ubuntu-latest
-    env:
+    herokudeploy:
+      name: Deploy to Heroku
+      runs-on: ubuntu-latest
+      env:
         BACKEND_API_URL: ${{ secrets.BACKEND_API_URL }}
-    steps:
-        - uses: actions/checkout@v2
-        - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
+      steps:
+        - name: Checkout the code
+          uses: actions/checkout@v2
+        - name: Deploy a40ea4a4d-frontend-react-with
+          uses: akhileshns/heroku-deploy@v3.12.12
+          with:
             heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-            heroku_app_name: 'ac620f10b-frontend-react-with'
+            heroku_app_name: 'a40ea4a4d-frontend-react-with'
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
-        - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
+        - name: Deploy a9425b721-rest-python
+          uses: akhileshns/heroku-deploy@v3.12.12
+          with:
             heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-            heroku_app_name: 'a4b80f417-rest-python'
+            heroku_app_name: 'a9425b721-rest-python'
             heroku_email: ${{ secrets.HEROKU_EMAIL }}
