@@ -21,7 +21,7 @@ jobs:
             docker_build_args: |
               BACKEND_API_URL
           env:
-            BACKEND_API_URL: https://adf3688c6-rest-python.herokuapp.com
+            BACKEND_API_URL: 'https://adf3688c6-rest-python.herokuapp.com'
         - name: Deploy adf3688c6-rest-python
           uses: akhileshns/heroku-deploy@v3.12.12
           with:
@@ -33,4 +33,4 @@ jobs:
             docker_build_args: |
               BACKEND_API_URL
           env:
-            BACKEND_API_URL: https://adf3688c6-rest-python.herokuapp.com
+            BACKEND_API_URL: 'https://adf3688c6-rest-python.herokuapp.com'
